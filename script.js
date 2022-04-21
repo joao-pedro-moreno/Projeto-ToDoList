@@ -1,22 +1,21 @@
 var taskId = 0
 
 function addTask() {
-
     var newTask = document.querySelector('#input-task').value
 
-    if (newTask) {
-        var element = document.getElementById("all-tasks")
-        let task = `
+    if (newTask != '') {
+        var allTasks = document.getElementById('all-tasks')
+
+        let taskBase = `
             <div class="task" id="task${taskId++}">
                 <span class="task-message">${newTask}</span>
-                <div id="task-icons">
-                    <i class='bx bx-info-circle'></i>
-                    <i class='bx bx-x'></i>
+                <div class="task-icons">
+                    <i class="bx bx-info-circle"></i>
+                    <i class="bx bx-x"></i>
                 </div>
-            </div>`    
+            </div>`
 
-        element.insertAdjacentHTML("beforeend", task)
-
-        document.querySelector('#input-task').value = ''
+        allTasks.insertAdjacentHTML("beforeend", taskBase)
+        document.querySelector("#input-task").value = ""
     }
 }

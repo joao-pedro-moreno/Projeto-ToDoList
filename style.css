@@ -80,7 +80,7 @@ main {
     color: #999;
 }
 
-#task-icons {
+.task-icons {
     display: flex;
 }
 
